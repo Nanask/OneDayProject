@@ -10,27 +10,27 @@ public class ScoreService {
 
 	protected Scanner scan;
 	protected List<ScoreVO> scoreList;
-	int Line;
+	int line;
 
 	public ScoreService() {//변수 초기화
 		// TODO Auto-generated constructor stub
 
 		scan = new Scanner(System.in);
 		scoreList = new ArrayList<ScoreVO>();
-		Line = 80;
+		line = 80;
 
 	}
 
 	public void selectMenu() { // 메뉴
 
 		while (true) {
-			System.out.println("=".repeat(Line));
+			System.out.println("=".repeat(line));
 			System.out.println("빛고을 고등학교 성적처리 프로젝트 2021");
-			System.out.println("-".repeat(Line));
+			System.out.println("-".repeat(line));
 			System.out.println("1. 학생별 성적 입력");
 			System.out.println("2. 학생 성적 리스트 출력");
 			System.out.println("QUIT. 업무종료");
-			System.out.println("-".repeat(Line));
+			System.out.println("-".repeat(line));
 			System.out.print("업무선택 >> ");
 			String strMenu = scan.nextLine();
 			if (strMenu.equals("QUIT")) {
@@ -79,9 +79,9 @@ public class ScoreService {
 		int intSic = 0;
 
 		while (true) {
-			System.out.println("=".repeat(Line));
+			System.out.println("=".repeat(line));
 			System.out.printf("학생 이름을 입력하세요(입력을 중단하려면 QUIT)\n");
-			System.out.println("-".repeat(Line));
+			System.out.println("-".repeat(line));
 			System.out.print("이름 : ");
 			strName = scan.nextLine();
 			if (strName.equals("QUIT")) {
@@ -91,8 +91,10 @@ public class ScoreService {
 		}
 
 		num = scoreList.size() + 1; // 배열의 시작값에 1을 더하라 / 배열이 정해지지 않았기 때문에 0이므로
-
-		System.out.println(num + "번 " + strName + "학생의 성적을 입력하세요(성적범위 : 0 ~ 100, 입력을 중단하려면 QUIT)\n");
+		
+		System.out.println("=".repeat(line));
+		System.out.println(num + "번 " + strName + "학생의 성적을 입력하세요(성적범위 : 0 ~ 100, 입력을 중단하려면 QUIT)");
+		System.out.println("-".repeat(line));
 
 //		while (true) {
 //			try {
@@ -119,7 +121,7 @@ public class ScoreService {
 //		}
 		while (true) {
 			System.out.print("국어 >> ");
-			Kor = scan.next();
+			Kor = scan.nextLine();
 			if (Kor.equals("QUIT")) {
 				return;
 			}
@@ -140,7 +142,7 @@ public class ScoreService {
 
 		while (true) {
 			System.out.print("영어 >> ");
-			Eng = scan.next();
+			Eng = scan.nextLine();
 			if (Eng.equals("QUIT")) {
 				return;
 			}
@@ -161,7 +163,7 @@ public class ScoreService {
 
 		while (true) {
 			System.out.print("수학 >> ");
-			Math = scan.next();
+			Math = scan.nextLine();
 			if (Math.equals("QUIT")) {
 				return;
 			}
@@ -181,7 +183,7 @@ public class ScoreService {
 		}
 		while (true) {
 			System.out.print("국사 >> ");
-			His = scan.next();
+			His = scan.nextLine();
 			if (His.equals("QUIT")) {
 				return;
 			}
@@ -201,7 +203,7 @@ public class ScoreService {
 		}
 		while (true) {
 			System.out.print("과학 >> ");
-			Sic = scan.next();
+			Sic = scan.nextLine();
 			if (Sic.equals("QUIT")) {
 				return;
 			}
@@ -224,7 +226,7 @@ public class ScoreService {
 //			String strSic = "";
 //			System.out.print("과학 >> ");
 //			
-//			Sic = scan.nextLine();
+//			Sic = scan.nextline();
 //			strSic = Integer.toString(Sic); // sic인 정수형을 문자열로 변환하겠다.
 //
 //			if (strSic.equals("QUIT")) {
@@ -255,8 +257,10 @@ public class ScoreService {
 		scoreVO.setAvg(Avg);
 
 		scoreList.add(scoreVO);
-
+		
+		System.out.println("=".repeat(line));
 		System.out.println(strName + "학생의 성적이 추가 되었습니다.");
+		System.out.println("-".repeat(line));
 
 		System.out.println("국어 >> " + scoreVO.getKor());
 		System.out.println("영어 >> " + scoreVO.getEng());
@@ -274,6 +278,8 @@ public class ScoreService {
 		int totalSci = 0;
 		int totalAll = 0;
 		float totalAvg = (float) 0;
+		
+		System.out.println("=".repeat(line));
 
 		for (int i = 0; i < scoreList.size(); i++) {
 
@@ -290,7 +296,7 @@ public class ScoreService {
 		}
 
 		// scoreList.size()값은 배열의 수가 몇개 있는지 알려주는 것
-		System.out.println("=".repeat(Line));
+		System.out.println("=".repeat(line));
 		System.out.print(scoreList.size() + "\t");
 		System.out.print("총점" + "\t");
 		System.out.print(totalKor + "\t");
@@ -304,9 +310,11 @@ public class ScoreService {
 	}
 
 	public void printList() { // 각 학생 별 성적 리스트
+		
 
+		System.out.println("=".repeat(line));
 		System.out.println("순번\t학생\t국어\t영어\t수학\t과학\t국사\t총점\t평균");
-		System.out.println("-".repeat(Line));
+		System.out.println("-".repeat(line));
 
 		for (int i = 0; i < scoreList.size(); i++) {
 
