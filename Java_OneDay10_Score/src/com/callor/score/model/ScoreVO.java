@@ -12,6 +12,7 @@ public class ScoreVO {
 	private Integer sci;
 	private Integer total;
 	private float avg;
+	
 	public Integer getNum() {
 		return num;
 	}
