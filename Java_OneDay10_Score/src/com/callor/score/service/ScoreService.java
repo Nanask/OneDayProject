@@ -269,7 +269,37 @@ public class ScoreService {
 		System.out.println("과학 >> " + scoreVO.getSci());
 	}
 
-	public void makeScore() { // 리스트 총합 구하기
+	
+
+	public void printList() { // 각 학생 별 성적 리스트
+		
+
+		System.out.println("=".repeat(line));
+		System.out.println("순번\t학생\t국어\t영어\t수학\t과학\t국사\t총점\t평균");
+		System.out.println("-".repeat(line));
+
+		for (int i = 0; i < scoreList.size(); i++) {
+
+			// scoreList의 i번째 저장된 값을 읽어서 ScoreVO형 sVO 객체에 담기
+			ScoreVO vo = scoreList.get(i);
+
+			System.out.print(vo.getNum() + "\t");
+			System.out.print(vo.getStrname() + "\t");
+			System.out.print(vo.getKor() + "\t");
+			System.out.print(vo.getEng() + "\t");
+			System.out.print(vo.getMath() + "\t");
+			System.out.print(vo.getSci() + "\t");
+			System.out.print(vo.getHis() + "\t");
+			System.out.print(vo.getTotal() + "\t");
+			System.out.printf("%3.2f\n" ,vo.getAvg());
+
+		}
+		this.printAllList();
+
+		
+	}
+	
+	public void printAllList() { // 리스트 총합 구하기
 
 		int totalKor = 0;
 		int totalEng = 0;
@@ -305,35 +335,8 @@ public class ScoreService {
 		System.out.print(totalSci + "\t");
 		System.out.print(totalHis + "\t");
 		System.out.print(totalAll + "\t");
-		System.out.print(totalAvg + "\n");
+		System.out.printf("%3.2f\n" , totalAvg);
 
-	}
-
-	public void printList() { // 각 학생 별 성적 리스트
-		
-
-		System.out.println("=".repeat(line));
-		System.out.println("순번\t학생\t국어\t영어\t수학\t과학\t국사\t총점\t평균");
-		System.out.println("-".repeat(line));
-
-		for (int i = 0; i < scoreList.size(); i++) {
-
-			// scoreList의 i번째 저장된 값을 읽어서 ScoreVO형 sVO 객체에 담기
-			ScoreVO vo = scoreList.get(i);
-
-			System.out.print(vo.getNum() + "\t");
-			System.out.print(vo.getStrname() + "\t");
-			System.out.print(vo.getKor() + "\t");
-			System.out.print(vo.getEng() + "\t");
-			System.out.print(vo.getMath() + "\t");
-			System.out.print(vo.getSci() + "\t");
-			System.out.print(vo.getHis() + "\t");
-			System.out.print(vo.getTotal() + "\t");
-			System.out.print(vo.getAvg() + "\n");
-
-		}
-
-		this.makeScore();
 	}
 
 }
