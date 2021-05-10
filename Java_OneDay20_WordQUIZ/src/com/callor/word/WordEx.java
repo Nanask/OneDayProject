@@ -10,7 +10,6 @@ public class WordEx {
 		WordService wsV1 = new WordServiceImplV1();
 		
 		wsV1.selectMenu();
-//		wsV1.viewWord();
 	}
 
 }
