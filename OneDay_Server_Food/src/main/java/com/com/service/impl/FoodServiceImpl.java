@@ -29,6 +29,7 @@ public class FoodServiceImpl implements FoodService {
 		while(rStr.next()) {
 			
 			MyFoodDTO mfDTO = new MyFoodDTO();
+			mfDTO.setMy_seq(rStr.getInt("순번"));
 			mfDTO.setMy_date(rStr.getString("날짜"));
 			mfDTO.setFd_fname(rStr.getString("식품명"));	
 			mfDTO.setMy_eat(rStr.getInt("섭취량"));

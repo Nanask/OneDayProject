@@ -30,7 +30,7 @@
       <c:forEach items="${FOODLIST}" var="ML">
          <tr>
             <th><${ML.fd_pcode}</th>
-            <th><a href=food/insert?fd_pname=${ML.fd_pname}></a></th>
+            <th><a href="insert2?fd_pname=${ML.fd_pname}"></a></th>
             <th>${ML.fd_tcode}</th>
             <th>${ML.fd_group}</th>
             <th>${ML.fd_fdate}</th>

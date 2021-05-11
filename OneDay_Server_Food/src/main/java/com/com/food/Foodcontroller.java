@@ -42,6 +42,7 @@ public class Foodcontroller extends HttpServlet {
 		resp.setContentType("text/html;charset=UTF-8");
 		PrintWriter out = resp.getWriter();
 
+		System.out.println("subPath : " + subPath);
 		if (subPath.equals("/list")) {
 
 			String strDate = req.getParameter("date");
@@ -60,6 +61,12 @@ public class Foodcontroller extends HttpServlet {
 				disp.forward(req, resp);
 
 			}
+		} else if (subPath.equals("/insert")) {
+
+			System.out.println("test");
+			RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/views/insert.jsp");
+			disp.forward(req, resp);
+
 		} else if (subPath.equals("/insert/search")) {
 
 			String fd_fname = req.getParameter("fd_fname");
@@ -81,12 +88,19 @@ public class Foodcontroller extends HttpServlet {
 				disp.forward(req, resp);
 
 			}
-		} else if (subPath.equals("/insert")) {
 
-			req.getRequestDispatcher("/WEB-INF/views/insert.jsp").forward(req, resp);
+		} else if (subPath.equals("/insert/insert2")) {
+			
+			String fd_pcode = req.getParameter("fd_pcode");
+			FoodDTO foodDTO = mfService.findById(fd_pcode);
 
+			ServletContext app = req.getServletContext();
+			app.setAttribute("MYFOOD", foodDTO);
+
+			// BUYER에 담긴 회원정보를 page1, page2 여기 입력해야함
+			RequestDispatcher disp = req.getRequestDispatcher("/WEB-INF/views/insert2.jsp");
+			disp.forward(req, resp);
 		}
 
 	}
-
 }

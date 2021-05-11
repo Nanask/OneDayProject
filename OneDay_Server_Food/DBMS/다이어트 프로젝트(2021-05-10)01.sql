@@ -91,7 +91,9 @@ DROP VIEW view_섭취리스트;
 
 CREATE VIEW view_섭취리스트 AS
 (
-SELECT M.my_date AS 날짜,
+SELECT
+        m.my_seq AS 순번,
+        M.my_date AS 날짜,
         F.fd_fname AS 식품명,
         M.my_eat AS 섭취량,
         F.fd_all AS "총내용량(g)",

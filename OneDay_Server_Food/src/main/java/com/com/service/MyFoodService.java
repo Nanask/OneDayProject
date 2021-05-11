@@ -6,6 +6,7 @@ import com.com.model.FoodDTO;
 
 public interface MyFoodService {
 	
-	public List<FoodDTO> findByName(String fname);
+	public List<FoodDTO> findByName(String fd_fname);
+	public FoodDTO findById(String fd_pcode);
 
 }

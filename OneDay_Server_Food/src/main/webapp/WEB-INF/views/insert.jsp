@@ -8,18 +8,13 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form action ="food/search">
-		<h1>섭취리스트 추가</h1>
+		<h1>식품명을 검색해주세요</h1>
 		<table>
 			<tr>
-				<th>날짜</th><td><input name="date"></td>
 				<th>식품명</th><td><input name="name"></td>
-				<th></th><td><a href="/food/search"></a><button>식품코드 찾기</button></td>
-				<th>섭취량</th><td><input name="eat"></td>
-			</tr>
-			
+				<th></th><td><a href="/food/insert/search"><button>식품코드 찾기</button></a></td>
+			</tr>	
 		</table>
-	</form>
 
 </body>
 </html>

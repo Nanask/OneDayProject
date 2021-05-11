@@ -13,6 +13,7 @@ import lombok.ToString;
 @NoArgsConstructor
 public class MyFoodDTO {
 	
+	Integer my_seq; // AS 순번
 	String my_date; // AS 날짜,
     String fd_fname; // AS 식품명,
     Integer my_eat; // AS 섭취량,

@@ -24,7 +24,7 @@
       <c:if test="${ empty MYFOOD }">결과가 없음!!</c:if>
       <c:forEach items="${MYFOOD}" var="MF">
          <tr>
-            <th>${MF.my_date}</a></th>
+            <th>${MF.my_date}</th>
             <th>${MF.fd_fname}</th>
             <th>${MF.my_eat}</th>
             <th>${MF.fd_all}</th>

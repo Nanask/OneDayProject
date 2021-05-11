@@ -15,7 +15,7 @@ public class FoodDTO {
 	
 	String fd_tcode; // AS 분류코드,
     String it_group; // AS 분류명,
-    String fd_pcode; // AS 상품코드, 
+    String fd_pcode; // AS 식품코드, 
     String fd_fname; // AS 식품명,
     String fd_fdate; // AS 출시연도,
     String fd_ccode; // AS 제조사코드,

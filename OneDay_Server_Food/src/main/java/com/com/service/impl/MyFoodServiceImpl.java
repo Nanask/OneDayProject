@@ -48,7 +48,7 @@ public class MyFoodServiceImpl implements MyFoodService{
 	}
 
 	@Override
-	public List<FoodDTO> findByName(String fname) {
+	public List<FoodDTO> findByName(String fd_pname) {
 		// TODO 이름으로 찾기
 		
 		String sql = " SELECT * FROM VIEW_식품정보 ";
@@ -58,9 +58,10 @@ public class MyFoodServiceImpl implements MyFoodService{
 		
 		try {
 			pStr = dbConn.prepareStatement(sql);
-			pStr.setString(1, fname);
+			pStr.setString(1, fd_pname.trim());
+			
 			List<FoodDTO> fList = this.select(pStr);
-			pStr.close();
+	
 			return fList;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -68,6 +69,37 @@ public class MyFoodServiceImpl implements MyFoodService{
 		}
 		
 	
+		return null;
+	}
+
+	@Override
+	public FoodDTO findById(String fd_pcode) {
+		// TODO Auto-generated method stub
+		
+		String sql = " SELECT * FROM view_도서대여정보";
+		sql += " WHERE 주문번호 = ? ";
+
+		PreparedStatement pStr = null;
+		try {
+			// 아래의 2개 코드에 의해서 WHERE 주문번호 = 값 형식의 SQL이 만들어진다.
+			pStr = dbConn.prepareStatement(sql);
+			pStr.setString(1, fd_pcode);
+
+			List<FoodDTO> fList = this.select(pStr);
+			FoodDTO fDTO = null;
+
+			if (fList != null && fList.size() > 0) {
+				fDTO = fList.get(0);
+			}
+
+			pStr.close();
+			return fDTO;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 
