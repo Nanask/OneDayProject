@@ -87,6 +87,8 @@ CREATE TABLE tbl_myfoods(
 
 DROP TABLE tbl_myfoods;
 
+DROP VIEW view_섭취리스트;
+
 CREATE VIEW view_섭취리스트 AS
 (
 SELECT M.my_date AS 날짜,
@@ -98,10 +100,12 @@ SELECT M.my_date AS 날짜,
         F.fd_fat AS "지방(g)",
         F.fd_car AS "탄수화물(g)",
         F.fd_sugars AS "총당류(g)"
-FROM tbl_foods F
-    LEFT JOIN tbl_myfoods M
+FROM tbl_myfoods M
+    LEFT JOIN tbl_foods F
         ON F.fd_pcode = M.my_pdcode
 );
+
+INSERT INTO tbl_myfoods(my_seq, my_date, my_pdcode, my_eat)VALUES(seq_food_list.NEXTVAL, '2021-05-10', 'PD00185', '3');
 
 COMMIT; 
 
