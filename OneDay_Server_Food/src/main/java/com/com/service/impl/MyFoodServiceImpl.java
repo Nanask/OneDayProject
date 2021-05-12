@@ -76,8 +76,8 @@ public class MyFoodServiceImpl implements MyFoodService{
 	public FoodDTO findById(String fd_pcode) {
 		// TODO Auto-generated method stub
 		
-		String sql = " SELECT * FROM view_도서대여정보";
-		sql += " WHERE 주문번호 = ? ";
+		String sql = " SELECT * FROM view_식품정보";
+		sql += " WHERE 식품코드 = ? ";
 
 		PreparedStatement pStr = null;
 		try {
