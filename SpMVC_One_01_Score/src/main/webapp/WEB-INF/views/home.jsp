@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%> 
+<%@taglib uri ="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<c:set value ="${pageContext.request.contextPath }" var="rootPath" />        
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,10 +46,12 @@
 		width: 90%;
 		margin: 20px auto;
 	}
-	table, tr, th {
+	table, tr  {
 		border: 1px solid black;
-
+	}
 	
+	table tr:hover {
+		background-color: #ddd;
 	}
 </style>
 <body>
@@ -59,7 +64,7 @@
 		<li>로그인</li>		
 	</ul>
 	</nav>
-	<table>
+	<table class="list">
 	<tr>
 		<th>학번</th>
 		<th>이름</th>
@@ -69,10 +74,29 @@
 		<th>총점</th>
 		<th>평균</th>	
 	</tr>
-	<c:forEach items"${}
-	<tr>
-	
+	   
+	<c:forEach items="${LIST}" var="list">
+	<tr data-num="${list.num}">
+		<td>${list.num}</td>
+		<td>${list.name}</td>
+		<td>${list.dept}</td>
+		<td>${list.grade}</td>
+		<td>${list.subject}</td>
+		<td>${list.total}</td>
+		<td>${list.avg}</td>
 	</tr>
+	</c:forEach>
 	</table>
 </body>
+<script>
+	document.querySelector("table.list").addEventListener("click" (e) => {
+		
+		let tagName = e.target.tagName;
+		if(tagName == "TD") {
+			let tr = e.target.closet("TR").dataset;
+			alert(num + "조회합니다.");
+			
+		}
+	});
+</script>
 </html>

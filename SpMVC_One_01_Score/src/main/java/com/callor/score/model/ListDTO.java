@@ -1,14 +1,25 @@
 package com.callor.score.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class ListDTO {
 	
-	private String 학번;
-	private String 이름;
-	private String 전공;
-	private int 학년;
-	private int 응시과목;
-	private int 총점;
-	private Float 평균;
+	private String num;
+	private String name;
+	private String dept;
+	private int grade;
+	private int subject;
+	private int total;
+	private Float avg;
 	
 
 }

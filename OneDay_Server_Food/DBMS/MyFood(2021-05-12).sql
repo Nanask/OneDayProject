@@ -165,8 +165,6 @@ FROM tbl_myfoods
 INSERT INTO tbl_myfoods(my_seq, my_pdcode, my_date, my_eat)
 VALUES(seq_myfoods.NEXTVAL,'PD00001','2021-05-12',1);
 
-    
-
-
+commit;
 
 
