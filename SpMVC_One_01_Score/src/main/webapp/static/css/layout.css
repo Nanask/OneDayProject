@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+table {
+	text-align: center;
+	margin: 30px auto;
+	width: 30%;
+}
+
+table, tr, th, td {
+	border: 1px solid black;
+	text-align: center;
+	border-collapse: collapse;
+	padding: 10px;
+}
+
+th {
+	background-color: aliceblue;
+}

@@ -1,0 +1,22 @@
+@charset "UTF-8";
+* {
+	margin:0;
+	padding: 0;
+	border: 0;
+	list-style: none;
+}
+nav.main_nav {
+	background: #aaa;
+}
+
+nav.main_nav ul {
+	display: flex;
+}
+
+nav.main_nav li {
+	padding: 10px 30px;
+}
+
+nav.main_nav li:nth-of-type(4) {
+	margin-left: auto;
+}

@@ -13,10 +13,10 @@ import lombok.Setter;
 @AllArgsConstructor
 public class ScoreVO {
 	
-	private Long sc_seq;	//BIGINT
-	private String sc_stnum;	//	CHAR(8)
-	private String sc_subject;	//	VARCHAR(20)
-	private Integer sc_score;	//	INT
+	private Long sc_Seq =0l;	//BIGINT
+	private String sc_Stnum;	//	CHAR(8)
+	private String sc_Subject;	//	VARCHAR(20)
+	private Integer sc_Score;	//	INT
 
 
 }

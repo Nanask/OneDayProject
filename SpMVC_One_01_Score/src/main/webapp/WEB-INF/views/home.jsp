@@ -5,41 +5,10 @@
     
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<%@ include file ="/WEB-INF/views/include/include_head.jspf" %>
 <style>
-* {
-	margin:0;
-	padding: 0;
-	border: 0;
-	list-style: none;
-}
-	h1 {
-		width: 100%;
-		padding: 20px;
-		text-align: center;
-		background-color: #ccc;
-	}
+
 	
-	nav.main_nav {
-		background: #aaa;
-		
-	}
-	
-	nav.main_nav ul {
-		display: flex;
-	}
-	
-	nav.main_nav li {
-		padding: 10px 30px;
-		
-	}
-	
-	nav.main_nav li:nth-of-type(4) {
-		margin-left: auto; 
-}
 	table {
 		text-align: center;
 		border-collapse: collapse;
@@ -49,21 +18,17 @@
 	table, tr  {
 		border: 1px solid black;
 	}
+	table th {
+		background-color: #ddd;
+	}
 	
 	table tr:hover {
 		background-color: #ddd;
 	}
 </style>
 <body>
-	<h1>대한 고교 성적처리 2021</h1>
-	<nav class="main_nav">
-	<ul>
-		<li>HOME</li>
-		<li>학생정보</li>
-		<li>성적알림표</li>
-		<li>로그인</li>		
-	</ul>
-	</nav>
+
+	<%@ include file ="/WEB-INF/views/include/include_header.jspf" %>
 	<table class="list">
 	<tr>
 		<th>학번</th>
@@ -89,12 +54,15 @@
 	</table>
 </body>
 <script>
-	document.querySelector("table.list").addEventListener("click" (e) => {
+	document.querySelector("table.list").addEventListener("click",(e) => {
 		
 		let tagName = e.target.tagName;
+		console.log(tagName);
 		if(tagName == "TD") {
-			let tr = e.target.closet("TR").dataset;
+			let num = e.target.closest("TR").dataset.num;
+			console.log(num);
 			alert(num + "조회합니다.");
+			location.href="${rootPath}/student?num=" +num;	
 			
 		}
 	});

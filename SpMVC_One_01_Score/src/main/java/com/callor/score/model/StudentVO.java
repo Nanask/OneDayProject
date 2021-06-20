@@ -16,7 +16,7 @@ public class StudentVO {
 	private String st_num;	//CHAR(8)
 	private String st_name;	//	VARCHAR(20)
 	private String st_dept;	//	VARCHAR(20)
-	private Integer st_grade;	//	INT
+	private int st_grade;	//	INT
 	private String st_tel;	//	VARCHAR(20)
 	private String st_addr;	//	VARCHAR(125)
 

@@ -40,6 +40,10 @@ public class HomeController {
 		List<ListDTO> listDTO = listService.selectAll();
 		
 	 	model.addAttribute("LIST",listDTO);
+	 	
+	 	log.debug(listDTO.toString());
+//	 	log.debug("test : {}", "test");
+//	 	log.debug("test##########################################################");
 		
 		return "home";
 	}
