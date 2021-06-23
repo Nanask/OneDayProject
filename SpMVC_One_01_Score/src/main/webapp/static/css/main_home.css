@@ -6,11 +6,12 @@
 	list-style: none;
 }
 nav.main_nav {
-	background: #aaa;
+	background: #fffad3;
 }
 
 nav.main_nav ul {
 	display: flex;
+	background-color: #ffe1ae;
 }
 
 nav.main_nav li {

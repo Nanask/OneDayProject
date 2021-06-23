@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
           urlPath += "/";          
         } else if (menuText === "학생정보") {
           // location.href = "{$rootPath}/books"와 같은의미
-          urlPath += "/stlist";
+          urlPath += "/student";
         } else if (menuText === "성적알림표") {
           urlPath += "/scores";
         }

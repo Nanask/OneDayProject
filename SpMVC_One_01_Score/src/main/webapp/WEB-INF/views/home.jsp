@@ -9,21 +9,21 @@
 <style>
 
 	
-	table {
+	table.list {
 		text-align: center;
 		border-collapse: collapse;
 		width: 90%;
-		margin: 20px auto;
+		margin: 40px auto;
 	}
-	table, tr  {
+	table.list tr  {
 		border: 1px solid black;
 	}
-	table th {
-		background-color: #ddd;
+	table.list th {
+		background-color:#fffad3;
 	}
 	
-	table tr:hover {
-		background-color: #ddd;
+	table.list tr:hover {
+		background-color: #ffe1ae;
 	}
 </style>
 <body>
@@ -62,7 +62,7 @@
 			let num = e.target.closest("TR").dataset.num;
 			console.log(num);
 			alert(num + "조회합니다.");
-			location.href="${rootPath}/student?num=" +num;	
+			location.href="${rootPath}/student/stlist?num=" +num;	
 			
 		}
 	});

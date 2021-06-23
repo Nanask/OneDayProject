@@ -34,18 +34,14 @@ public class StudentController {
 	
 	
 	@RequestMapping(value= {"/",""}, method=RequestMethod.GET)
-	public String student(@RequestParam("num") String num, Model model) {
+	public String student( Model model) {
 		
-
-		StudentVO studentVO = stService.findById(num);
-		List<ScoreVO> scoreVO = scService.findByNum(num);
 		
-		model.addAttribute("ST", studentVO);
-		model.addAttribute("SC", scoreVO);
+		List<StudentVO> stList = stService.selectAll();
 		
-//		log.debug("scoreVO {}", scoreVO.toString());
+		model.addAttribute("ST",stList);
 			
-		return "/student"; 
+		return "student"; 
 		
 	}
 	@RequestMapping(value="/stinsert",method=RequestMethod.GET)
@@ -55,17 +51,30 @@ public class StudentController {
 		
 		model.addAttribute("ST", studentVO);
 		
-		return "student/stinsert";
+		return "stinsert";
+	}
+	@RequestMapping(value="stinsert",method=RequestMethod.POST)
+	public String insert() {
+		
+//		List<StudentVO> studentVO = stService.insert(null)
+		return "redirect:/stlist";
 	}
 	
-	@RequestMapping(value="/stList",method=RequestMethod.GET)
-	public String List(Model model) {
+	@RequestMapping(value="/stlist",method=RequestMethod.GET)
+	public String List(String num,Model model) {
 		
-		List<StudentVO> stList = stService.selectAll();
+
+		StudentVO studentVO = stService.findById(num);
+		List<ScoreVO> scoreVO = scService.findByNum(num);
 		
-		model.addAttribute("ST",stList);
+		model.addAttribute("ST", studentVO);
+		model.addAttribute("SC", scoreVO);
 		
-		return "student/stList";
+//		log.debug("scoreVO {}", scoreVO.toString());
+		
+
+		
+		return "stlist";
 	}
 	
 

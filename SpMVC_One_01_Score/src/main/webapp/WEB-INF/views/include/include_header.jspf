@@ -8,7 +8,7 @@ h1 {
 	width: 100%;
 	padding: 20px;
 	text-align: center;
-	background-color: #ccc;
+	background-color: #fffad3;
 }
 
 nav.main_nav {
@@ -27,6 +27,11 @@ nav.main_nav li:nth-of-type(4) {
 	margin-left: auto;
 }
 </style>
+<script>
+var rootPath = "${rootPath}";
+</script>
+<script src="${rootPath}/static/js/main_nav.js?ver=2021-06-23-008">
+</script>
 	<h1>대한 고교 성적처리 2021</h1>
 	<nav class="main_nav">
 	<ul>

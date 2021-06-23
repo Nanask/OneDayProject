@@ -4,11 +4,9 @@
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
+<%@ include file ="/WEB-INF/views/include/include_head.jspf" %>
 <body>
+	<%@ include file ="/WEB-INF/views/include/include_header.jspf" %>
 	<table>
 		<tr>
 			<th>No.</th>

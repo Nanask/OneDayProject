@@ -52,19 +52,37 @@ public class ScoreServiceImpl implements ScoreDao{
 	@Override
 	public int insert(ScoreVO vo) {
 		// TODO Auto-generated method stub
-		return 0;
+		String sql = " INSERT INTO tbl_score (sc_Stnum, sc_Subject, sc_Score) ";
+		sql += " VALUES ( ?,?,?) ";
+		Object[] params = new Object[] 
+				{ vo.getSc_Stnum(),vo.getSc_Subject(),vo.getSc_Score() };
+				
+		return jdbcTemplate.update(sql, params);
 	}
 
 	@Override
 	public int update(ScoreVO vo) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		String sql = " UPDATE tbl_score SET ";
+		sql += " sc_Stnum = ?";
+		sql	+= "sc_Subject = ?";
+		sql	+= "sc_Score = ? ";
+		sql += " WHERE sc_Seq = ? ";
+		Object[] params = new Object[] 
+				{ vo.getSc_Stnum(),vo.getSc_Subject(),vo.getSc_Score(),vo.getSc_Seq() };
+		
+		
+		return jdbcTemplate.update(sql, params);
 	}
 
 	@Override
 	public int Delete(String pk) {
 		// TODO Auto-generated method stub
-		return 0;
+		
+		String sql = " DELETE FROM tbl_score ";
+		sql += " WHERE sc_Seq = ? ";
+		return jdbcTemplate.update(sql, pk);
 	}
 
 	@Override

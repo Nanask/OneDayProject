@@ -4,33 +4,42 @@
 <c:set value="${pageContext.request.contextPath }" var="rootPath" />
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<fieldset>
-		<legend>학생정보</legend>
-		<table>
-			<tr>
-				<th>학번</th>
-				<th>이름</th>
-				<th>학과</th>
-				<th>학년</th>
-				<th>전화번호</th>
-				<th>주소</th>
-			</tr>
-			<tr>
-				<td>${ST.st_num}</td>
-				<td>${ST.st_name}</td>
-				<td>${ST.st_dept}</td>
-				<td>${ST.st_grade}</td>
-				<td>${ST.st_grade}</td>
-				<td>${ST.st_tel}</td>
-				<td>${ST.st_addr}</td>
-			</tr>
-		</table>
-	</fieldset>
+<%@ include file="/WEB-INF/views/include/include_head.jspf"%>
 
+<body>
+	<%@ include file="/WEB-INF/views/include/include_header.jspf"%>
+	<form method="POST">
+		<fieldset>
+			<legend>학생정보</legend>
+			<div>
+				<label>학번</label> <input type="text" name="st_num"
+					value="${ST.st_num}">
+			</div>
+			<div>
+				<label>이름</label> <input type="text" name="st_name"
+					value="${ST.st_name}">
+			</div>
+			<div>
+				<label>학과</label> <input type="text" name="st_dept"
+					value="${ST.st_dept}">
+			</div>
+			<div>
+				<label>학년</label> <input type="text" name="st_grade"
+					value="${ST.st_grade}">
+			</div>
+			<div>
+				<label>전화번호</label> <input type="text" name="st_tel"
+					value="${ST.st_tel}">
+			</div>
+			<div>
+				<label>주소</label> <input type="text" name="st_addr"
+					value="${ST.st_addr}">
+			</div>
+			<div class="button">
+				<button>정보 수정</button>
+				<button>정보 삭제</button>
+			</div>
+		</fieldset>
+	</form>
 </body>
 </html>
