@@ -26,8 +26,8 @@
 		background-color: #ddd;
 	}
 </style>
-<body>
 
+<body>
 	<%@ include file ="/WEB-INF/views/include/include_header.jspf" %>
 	<table class="list">
 	<tr>

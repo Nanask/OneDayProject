@@ -51,7 +51,7 @@
 	</tr>
 </c:forEach>	
 </table>
-<button id="btn_delete" type="button">학생성적 삭제</button>
+<button id="btn_delete" type="button" >학생성적 삭제</button>
  
 <script>
 document.querySelector("button#btn_update").addEventListener("click",(e)=>{
@@ -61,8 +61,11 @@ document.querySelector("button#btn_update").addEventListener("click",(e)=>{
 	location.href="${rootPath}/student/stinsert?num=" +num;
 });
 
-document.querySelector("button#btn_delete").addEventListener("click",(e) => {
-	let seq = e.target.closest("TR").dataset.seq;
+document.querySelector("table.score").addEventListener("click",(e) => {
+	if(tagName == "TD") {
+		
+	}
+	let scseq = e.target.closest("TR").dataset.seq;
 	if(confirm(seq + "를 삭제합니다")) {
 		location.replace("${rootPath}/student/delete?seq=" +seq)
 	}

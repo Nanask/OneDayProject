@@ -34,7 +34,7 @@ public class StudentController {
 	
 	
 	@RequestMapping(value= {"/",""}, method=RequestMethod.GET)
-	public String student(@RequestParam("num") String num, Model model) {
+	public String student( String num, Model model) {
 		
 
 		StudentVO studentVO = stService.findById(num);
@@ -55,17 +55,18 @@ public class StudentController {
 		
 		model.addAttribute("ST", studentVO);
 		
-		return "student/stinsert";
+		return "/stinsert";
 	}
-	
-	@RequestMapping(value="/stList",method=RequestMethod.GET)
-	public String List(Model model) {
+
+//	student/stlist
+	@RequestMapping(value="/stlist",method=RequestMethod.GET)
+	public String list(Model model) {
 		
 		List<StudentVO> stList = stService.selectAll();
 		
 		model.addAttribute("ST",stList);
 		
-		return "student/stList";
+		return "stlist";
 	}
 	
 
