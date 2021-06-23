@@ -28,7 +28,8 @@ public class ListServiceImpl implements ListService{
 	public List<ListDTO> selectAll() {
 		// TODO Auto-generated method stub
 		
-		String sql = " SELECT * FROM view_성적관리 ";
+		String sql = " SELECT 응시과목 subject, 이름 name, 전공 dept,"
+				+ " 총점 total, 평균 avg, 학년 grade, 학번 num FROM view_성적관리 ";
 		
 		List<ListDTO> listDTO = 
 				jdbcTemplate.query(sql, new BeanPropertyRowMapper<ListDTO>(ListDTO.class));

@@ -30,14 +30,18 @@ nav.main_nav li:nth-of-type(4) {
 <script>
 var rootPath = "${rootPath}";
 </script>
+<<<<<<< HEAD
 <script src="${rootPath}/static/js/main_nav.js?ver=2021-06-23-008">
 </script>
+=======
+<script src="${rootPath}/static/js/main_nav.js?ver=2021-06-23-001"></script>
+>>>>>>> 2089ca17aebe1ad6af9b8b5f04a6d741fc5e767c
 	<h1>대한 고교 성적처리 2021</h1>
 	<nav class="main_nav">
 	<ul>
 		<li>HOME</li>
 		<li>학생정보</li>
 		<li>성적알림표</li>
-		<li>로그인</li>		
+		<li>로그인</li>
 	</ul>
-	</nav>
+	</nav>	
