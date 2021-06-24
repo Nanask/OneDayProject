@@ -20,11 +20,30 @@ div.button {
 	margin: 10px auto;
 	font-weight: bold;
 	right: 20%;
+	
+}
+/*
+button#btn_update {
+	
 }
 
-div.button:hover {
-	background-color: #dedcee;
+button#btn_delete {
+	background : url("${rootPath}/static/image/image_03.png") no-repeat white;
 }
+*/
+
+
+img.btn_img {
+	border: none;
+	background-color: white;
+}
+
+button img.btn_img:hover {
+	border: none;
+	background-color: white;
+	background-image: url("${rootPath}/static/image/image_02.png") no-repeat;
+
+
 </style>
 
 <table>
@@ -41,11 +60,6 @@ div.button:hover {
 		<td>${ST.st_grade}</td>
 	</tr>
 </table>
-<div>
-	<button id="btn_update" type="button" data-num="${ST.st_num}">학생정보
-		수정</button>
-</div>
-
 <table class="score">
 	<tr>
 		<th>NO.</th>
@@ -59,9 +73,16 @@ div.button:hover {
 			<td>${SC.sc_Score}</td>
 		</tr>
 	</c:forEach>
+	<tr>
+		<td></td>
+		<td>${LIST.subject}</td>
+		<td>${LIST.total}</td>
+	</tr>
 </table>
 <div class="button">
-	<button id="btn_delete" type="button">학생성적 삭제</button>
+	 <button id="btn_update" type="submit" data-num="${ST.st_num}" ><img class="btn_img" src="${rootPath}/static/image/image_03.png"></button>
+	<!--<button id="btn_update" type="submit" data-num="${ST.st_num}">학생정보수정</button> -->
+	<button id="btn_delete" type="submit" ><img class="btn_img" src="${rootPath}/static/image/image_03.png">학생성적삭제</button>
 </div>
 <script>
 document.querySelector("button#btn_update").addEventListener("click",(e)=>{

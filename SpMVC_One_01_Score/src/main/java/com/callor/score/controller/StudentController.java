@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.callor.score.model.ListDTO;
 import com.callor.score.model.ScoreVO;
 import com.callor.score.model.StudentVO;
 import com.callor.score.service.ListService;
 import com.callor.score.service.ScoreService;
 import com.callor.score.service.StudentService;
-import com.mysql.cj.x.protobuf.MysqlxNotice.SessionStateChanged.Parameter;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,24 +23,22 @@ import lombok.extern.slf4j.Slf4j;
 public class StudentController {
 	public final StudentService stService;
 	public final ScoreService scService;
+	public final ListService liService;
 	
 	
-	public StudentController(StudentService stService, ScoreService scService) {
+	public StudentController(StudentService stService, ScoreService scService, ListService liService) {
 		// TODO Auto-generated constructor stub
 		this.stService = stService;
 		this.scService = scService;
+		this.liService = liService;
+		
 //		System.out.println("test");
 	}
 	
 	
 	@RequestMapping(value= {"/",""}, method=RequestMethod.GET)
-<<<<<<< HEAD
 	public String student( Model model) {
-=======
-	public String student( String num, Model model) {
->>>>>>> 2089ca17aebe1ad6af9b8b5f04a6d741fc5e767c
-		
-		
+
 		List<StudentVO> stList = stService.selectAll();
 		
 		model.addAttribute("ST",stList);
@@ -55,7 +53,6 @@ public class StudentController {
 		
 		model.addAttribute("ST", studentVO);
 		
-<<<<<<< HEAD
 		return "stinsert";
 	}
 	@RequestMapping(value="stinsert",method=RequestMethod.POST)
@@ -64,24 +61,18 @@ public class StudentController {
 //		List<StudentVO> studentVO = stService.insert(null)
 		return "redirect:/stlist";
 	}
-	
-	@RequestMapping(value="/stlist",method=RequestMethod.GET)
-	public String List(String num,Model model) {
-=======
-		return "/stinsert";
-	}
-
 //	student/stlist
 	@RequestMapping(value="/stlist",method=RequestMethod.GET)
-	public String list(Model model) {
->>>>>>> 2089ca17aebe1ad6af9b8b5f04a6d741fc5e767c
+	public String list(String num, Model model) {
 		
 
 		StudentVO studentVO = stService.findById(num);
 		List<ScoreVO> scoreVO = scService.findByNum(num);
+		ListDTO listDTO = liService.findById(num);
 		
 		model.addAttribute("ST", studentVO);
 		model.addAttribute("SC", scoreVO);
+		model.addAttribute("LIST",listDTO);
 		
 //		log.debug("scoreVO {}", scoreVO.toString());
 		

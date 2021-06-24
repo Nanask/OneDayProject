@@ -8,5 +8,7 @@ import com.callor.score.model.ListDTO;
 public interface ListService {
 	
 	public List<ListDTO> selectAll();
+	
+	public ListDTO findById(String num);
 
 }
