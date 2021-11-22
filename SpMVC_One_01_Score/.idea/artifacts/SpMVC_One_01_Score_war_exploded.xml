@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="SpMVC_One_01_Score:war exploded">
+    <output-path>$PROJECT_DIR$/classes/artifacts/SpMVC_One_01_Score_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="SpMVC_One_01_Score/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="SpMVC_One_01_Score" />
+        </element>
+        <element id="directory" name="lib" />
+      </element>
+    </root>
+  </artifact>
+</component>
